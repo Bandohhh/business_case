@@ -17,7 +17,8 @@ def train_decision_tree(random_state=42):
     """
     Train a Decision Tree classifier and return the fitted model and test data.
     """
-    df = load_dataset()
+    from .features import build_features
+    df = build_features()
 
     X = df.drop(columns=[TARGET_COL])
     y = df[TARGET_COL]
