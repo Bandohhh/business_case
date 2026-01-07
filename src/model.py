@@ -42,7 +42,7 @@ def train_decision_tree(random_state=42):
 
 def plot_roc_curve(model, X_test, y_test):
     """
-    Plot and save ROC curve.
+    Plot and save ROC curve (report-friendly rectangular format).
     """
     FIG_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -50,15 +50,15 @@ def plot_roc_curve(model, X_test, y_test):
     fpr, tpr, _ = roc_curve(y_test, y_prob)
     auc = roc_auc_score(y_test, y_prob)
 
-    plt.figure()
-    plt.plot(fpr, tpr, label=f"AUC = {auc:.3f}")
-    plt.plot([0, 1], [0, 1], linestyle="--")
-    plt.xlabel("False Positive Rate")
-    plt.ylabel("True Positive Rate")
-    plt.title("ROC Curve — Decision Tree")
-    plt.legend()
+    plt.figure(figsize=(8, 5))
+    plt.plot(fpr, tpr, label=f"AUC = {auc:.3f}", linewidth=2)
+    plt.plot([0, 1], [0, 1], linestyle="--", linewidth=1)
+    plt.xlabel("False Positive Rate", fontsize=11)
+    plt.ylabel("True Positive Rate", fontsize=11)
+    plt.title("ROC Curve — Decision Tree", fontsize=12)
+    plt.legend(fontsize=10)
     plt.tight_layout()
-    plt.savefig(FIG_DIR / "roc_curve_decision_tree.png")
+    plt.savefig(FIG_DIR / "roc_curve_decision_tree.png", dpi=300)
     plt.close()
 
     print("Saved:", FIG_DIR / "roc_curve_decision_tree.png")
@@ -66,7 +66,7 @@ def plot_roc_curve(model, X_test, y_test):
 
 def plot_feature_importance(model, X_test, top_n=10):
     """
-    Plot and save top feature importances.
+    Plot and save top feature importances (report-friendly rectangular format).
     """
     FIG_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -79,13 +79,13 @@ def plot_feature_importance(model, X_test, top_n=10):
         .head(top_n)
     )
 
-    plt.figure()
+    plt.figure(figsize=(8, 5))
     plt.barh(imp_df["feature"], imp_df["importance"])
-    plt.xlabel("Importance")
-    plt.title("Top Feature Importances — Decision Tree")
+    plt.xlabel("Relative Importance", fontsize=11)
+    plt.title("Top Feature Importances — Decision Tree", fontsize=12)
     plt.gca().invert_yaxis()
     plt.tight_layout()
-    plt.savefig(FIG_DIR / "feature_importance_decision_tree.png")
+    plt.savefig(FIG_DIR / "feature_importance_decision_tree.png", dpi=300)
     plt.close()
 
     print("Saved:", FIG_DIR / "feature_importance_decision_tree.png")
