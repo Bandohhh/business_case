@@ -4,7 +4,7 @@ from .retail_data import load_retail_monthly_feature
 
 def build_features():
     """
-    Build modelling dataset by combining:
+    Builds a modelling dataset by combining:
     - Online shopper behaviour 
     - Retail sales index 
     """

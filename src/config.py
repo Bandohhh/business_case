@@ -6,7 +6,7 @@ DATA_PATH = Path("data/online_shoppers_intention.csv")
 # Target column
 TARGET_COL = "Revenue"
 
-# Columns we expect to exist (based on the dataset description)
+# Columns that exist in the dataset and are required for modeling
 REQUIRED_COLS = [
     "Administrative",
     "Administrative_Duration",

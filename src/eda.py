@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 
 from .load_data import load_dataset
 
-
+# Directory to save figures
 FIG_DIR = Path("figures")
 
-
+# Conversion rate by month
 def conversion_rate_by_month():
     """
     Creates a bar chart of conversion rate (Revenue=True) by Month.
@@ -29,6 +29,6 @@ def conversion_rate_by_month():
 
     print("Saved:", FIG_DIR / "conversion_rate_by_month.png")
 
-
+# Main entry point
 if __name__ == "__main__":
     conversion_rate_by_month()

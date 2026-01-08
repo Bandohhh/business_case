@@ -42,7 +42,7 @@ def train_decision_tree(random_state=42):
 
 def plot_roc_curve(model, X_test, y_test):
     """
-    Plot and save ROC curve (report-friendly rectangular format).
+    Plot and save ROC curve in a rectangular format.
     """
     FIG_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -66,7 +66,7 @@ def plot_roc_curve(model, X_test, y_test):
 
 def plot_feature_importance(model, X_test, top_n=10):
     """
-    Plot and save top feature importances (report-friendly rectangular format).
+    Plot and save top feature importances.
     """
     FIG_DIR.mkdir(parents=True, exist_ok=True)
 

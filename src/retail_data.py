@@ -10,7 +10,7 @@ MONTH_ORDER = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
 def _find_header_row(filepath: Path) -> int:
     """
     Find the line number (0-indexed) where the real header starts.
-    We look for a line containing 'Date' and 'Monthly' (ONS format).
+    looking for a line containing 'Date' and 'Monthly' (ONS format).
     """
     with filepath.open("r", encoding="utf-8-sig", errors="ignore") as f:
         for i, line in enumerate(f):
