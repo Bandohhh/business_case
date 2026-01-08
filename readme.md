@@ -34,3 +34,26 @@ All visual outputs can be viewed in the figures folder
 
 To run all test:
 pytest
+
+
+Tools and Libraries Used
+
+Python 3.11
+
+pandas - data manipulation
+
+NumPy – numerical operations
+
+scikit-learn – modelling and evaluation
+
+matplotlib – visualisation
+
+pytest – unit testing
+
+CircleCI – continuous integration
+
+Git & GitHub – version control
+
+Author
+
+Elias Bandoh
